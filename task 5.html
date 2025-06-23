@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jHANSHI | Portfolio</title>
+  <section id="intro" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(to right, #8e2de2, #4a00e0); color: white; text-align: center; padding: 40px;">
+  <h1 style="font-size: 3rem; margin-bottom: 20px;">Welcome to JANU Web World!</h1>
+  <p style="font-size: 1.3rem; max-width: 600px;">Building clean, dynamic, and responsive web experiences—one line of code at a time.</p>
+  <a href="#projects" style="margin-top: 30px; padding: 12px 25px; background: white; color: #4a00e0; font-weight: bold; border-radius: 8px; text-decoration: none; transition: 0.3s;">
+    Explore My Work →
+  </a>
+</section>
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #111;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+    
+
+    section {
+      min-height: 100vh;
+      padding: 120px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #about { background: linear-gradient(to right, #e0eafc, #cfdef3); }
+    #projects { background: linear-gradient(to right, #fdfbfb, #ebedee); }
+    #contact { background: linear-gradient(to right, #e8f0f2, #cfd9df); }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .project-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(47, 7, 225, 0.973);
+    }
+
+    form {
+      width: 200%;
+      max-width: 500px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(20, 6, 141, 0.648);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 3px solid #0d0e11ec;
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h1>About Me</h1>
+    <p>Hello! I’m JHANSHI, a front-end developer passionate about clean UI and responsive web experiences.</p>
+  </section>
+
+  <section id="projects">
+    <h1>My Projects</h1>
+    <div class="project-grid">
+      <div class="project-box">
+        <h3>Quiz App</h3>
+        <p>Responsive quiz with score tracking using JavaScript.</p>
+      </div>
+      <div class="project-box">
+        <h3>Image Carousel</h3>
+        <p>Custom-built carousel with swipe support and transitions.</p>
+      </div>
+      <div class="project-box">
+        <h3>Weather App</h3>
+        <p>Live weather app using real-time API fetch and dynamic updates.</p>
+      </div>
+      <div class="project-box">
+        <h3>Portfolio Website</h3>
+        <p>Showcase site with animations, transitions, and responsive design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Me</h1>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      if (name && email.includes("@") && message) {
+        alert("Message sent successfully!");
+        this.reset();
+      } else {
+        alert("Please fill in all fields correctly.");
+      }
+    });
+  </script>
+
+</body>
+</html>
